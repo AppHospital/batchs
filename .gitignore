@@ -1,0 +1,32 @@
+# Compiled class file
+*.class
+*.classpath
+
+# Properties files
+**/properties
+
+# Maven generation
+**/target
+
+# Log file
+*.log
+mylog-*.txt
+
+# Unix editor generation
+*.swp
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Eclipse file
+.metadata
+**/.settings
+**/bin
+**/tmp
+*.tmp
+*.back
