@@ -1,0 +1,97 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"description": "Comment describing your JSON Schema",
+	"definitions": {
+		"User": {
+			"javaType": "fr.appHospital.model.User",
+			"type": [
+				"object",
+				null
+			],
+			"properties": {
+				"identifier": {
+					"type": [
+						"string",
+						null
+					]
+				},
+				"firstName": {
+					"type": [
+						"string",
+						null
+					]
+				},
+				"lastName": {
+					"type": [
+						"string",
+						null
+					]
+				},
+				"headquarterAccount": {
+					"type": [
+						"string",
+						null
+					]
+				},
+				"tribes": {
+					"type": [
+						"string",
+						null
+					]
+				},
+				"squad": {
+					"type": [
+						"string",
+						null
+					]
+				}
+			},
+			"additionalProperties": false
+		},
+		"Indicator": {
+			"javaType": "fr.appHospital.model.Indicator",
+			"type": [
+				"object",
+				null
+			],
+			"properties": {
+				"user": {
+					"$ref": "#/definitions/User"
+				}
+			},
+			"additionalProperties": false
+		},
+		"Application": {
+			"javaType": "fr.appHospital.model.AppHospital",
+			"type": [
+				"object",
+				null
+			],
+			"properties": {
+				"applicationType": {
+					"type": [
+						"string",
+						null
+					]
+				},
+				"indicators": {
+					"type": [
+						"array",
+						null
+					],
+					"items": {
+						"$ref": "#/definitions/Indicator"
+					}
+				}
+			},
+			"additionalProperties": false
+		}
+	},
+	"type": "object",
+	"properties": {
+		"appHospital": {
+			"$ref": "#/definitions/Application"
+		}
+	},
+	"additionalProperties": false
+}
