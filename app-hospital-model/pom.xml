@@ -7,12 +7,43 @@
 		<groupId>fr.alm</groupId>
 		<artifactId>app-hospital-main</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../app-hospital-main/pom.xml</relativePath>
 	</parent>
 
 	<artifactId>app-hospital-model</artifactId>
 	<packaging>jar</packaging>
 
 	<name>app-hospital-model</name>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.jsonschema2pojo</groupId>
+				<artifactId>jsonschema2pojo-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>appHospitalModel</id>
+						<configuration>
+							<sourcePaths>
+								<sourcePath>${basedir}/src/main/jsonschema/appHospital.json</sourcePath>
+							</sourcePaths>
+							<outputDirectory>${project.build.directory}/java-gen</outputDirectory>
+							<targetPackage>fr.alm.apphospital.model</targetPackage>
+							<useCommonsLang3>true</useCommonsLang3>
+							<useBigDecimals>true</useBigDecimals>
+							<includeAdditionalProperties>false</includeAdditionalProperties>
+							<!-- <removeOldOutput>true</removeOldOutput> -->
+							<targetVersion>1.8</targetVersion>
+							<propertyWordDelimiters>-</propertyWordDelimiters>
+						</configuration>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 
 	<dependencies>
 		<dependency>

@@ -3,7 +3,7 @@
 	"description": "Comment describing your JSON Schema",
 	"definitions": {
 		"User": {
-			"javaType": "fr.appHospital.model.User",
+			"javaType": "fr.alm.apphospital.model.User",
 			"type": [
 				"object",
 				null
@@ -49,7 +49,7 @@
 			"additionalProperties": false
 		},
 		"Indicator": {
-			"javaType": "fr.appHospital.model.Indicator",
+			"javaType": "fr.alm.apphospital.model.Indicator",
 			"type": [
 				"object",
 				null
@@ -60,37 +60,24 @@
 				}
 			},
 			"additionalProperties": false
-		},
-		"Application": {
-			"javaType": "fr.appHospital.model.AppHospital",
-			"type": [
-				"object",
-				null
-			],
-			"properties": {
-				"applicationType": {
-					"type": [
-						"string",
-						null
-					]
-				},
-				"indicators": {
-					"type": [
-						"array",
-						null
-					],
-					"items": {
-						"$ref": "#/definitions/Indicator"
-					}
-				}
-			},
-			"additionalProperties": false
 		}
 	},
 	"type": "object",
 	"properties": {
-		"appHospital": {
-			"$ref": "#/definitions/Application"
+		"applicationType": {
+			"type": [
+				"string",
+				null
+			]
+		},
+		"indicators": {
+			"type": [
+				"array",
+				null
+			],
+			"items": {
+				"$ref": "#/definitions/Indicator"
+			}
 		}
 	},
 	"additionalProperties": false
