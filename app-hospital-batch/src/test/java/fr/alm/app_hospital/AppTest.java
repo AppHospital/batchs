@@ -1,4 +1,4 @@
-package fr.axa.alm.app_hospital;
+package fr.alm.app_hospital;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

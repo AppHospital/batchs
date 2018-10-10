@@ -1,4 +1,4 @@
-package fr.axa.alm.app_hospital;
+package fr.alm.app_hospital;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
